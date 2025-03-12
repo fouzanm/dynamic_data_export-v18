@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Export Log Form View -->
+    <record id="view_webhook_export_log_form" model="ir.ui.view">
+        <field name="name">webhook.export.log.form</field>
+        <field name="model">webhook.export.log</field>
+        <field name="arch" type="xml">
+            <form string="Export Log">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="webhook_id" />
+                            <field name="create_date" />
+                            <field name="status" />
+                        </group>
+                        <group>
+                            <field name="record_count" />
+                            <field name="message" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Exported Data">
+                            <field name="data" widget="ace" options="{'mode': 'json'}" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Export Log list View -->
+    <record id="view_webhook_export_log_list" model="ir.ui.view">
+        <field name="name">webhook.export.log.list</field>
+        <field name="model">webhook.export.log</field>
+        <field name="arch" type="xml">
+            <list string="Export Logs">
+                <field name="create_date" />
+                <field name="webhook_id" />
+                <field name="status" />
+                <field name="record_count" />
+                <field name="message" />
+            </list>
+        </field>
+    </record>
+
+    <!-- Export Log Action -->
+    <record id="action_webhook_export_log" model="ir.actions.act_window">
+        <field name="name">Export Logs</field>
+        <field name="res_model">webhook.export.log</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

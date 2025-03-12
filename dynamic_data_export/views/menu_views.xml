@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_webhook_root" name="Data Exporter"/>
+
+    <!-- Webhook Config Menu -->
+    <menuitem id="menu_webhook_configs"
+              name="Webhooks"
+              parent="menu_webhook_root"
+              action="action_webhook_config"
+              sequence="10" />
+
+    <!-- Export Logs Menu -->
+    <menuitem id="menu_webhook_export_logs"
+              name="Export Logs"
+              parent="menu_webhook_root"
+              action="action_webhook_export_log"
+              sequence="20" />
+</odoo>
