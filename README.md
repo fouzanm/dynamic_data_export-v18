@@ -1,2 +1,1 @@
-# dynamic_data_export
-# Odoo18
+# dynamic_data_export v18
