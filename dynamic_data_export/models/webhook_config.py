@@ -33,8 +33,8 @@ class WebhookConfig(models.Model):
         """Export records to the webhook endpoint"""
         self.ensure_one()
         domain = []
-        # if self.last_export:
-        #     domain = [('write_date', '>', self.last_export)]
+        if self.last_export:
+            domain = [('write_date', '>', self.last_export)]
         records = self.env[self.model_id.model].search(domain)
         if not records:
             return {
